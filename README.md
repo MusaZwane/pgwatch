@@ -1,4 +1,7 @@
-# Code-Fighter
+# PGWATCH
+
+INSTALLING
+
 For the fastest installation / setup experience Docker images are provided via Docker Hub (for a Docker quickstart see here). For doing a custom setup see the "Installing without Docker" paragraph below or turn to the "releases" tab for DEB / RPM / Tar packages.
 
 # fetch and run the latest Docker image, exposing Grafana on port 3000 and administrative web UI on 8080
