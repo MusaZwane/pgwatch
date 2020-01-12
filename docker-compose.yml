@@ -8,11 +8,11 @@ services:
   - PW2_WEBUSER=$USER
   - PW2_WEBPASSWORD=$PASS
   - PW2_GRAFANANOANONYMOUS=true
-
-
+  
   ports:
   - "8090:3000"
   - "8084:8080"
+  
   volumes:
   - ./logs/grafana:/var/log/grafana/:rw
   - ./logs/influxdb:/var/log/influxdb/:rw
@@ -22,8 +22,10 @@ services:
   - ./influx:/var/lib/influxdb/:rw
   - ./pg:/var/lib/postgresql/:rw
   - ./grafana:/var/lib/grafana/:rw
+  
   networks:
   - pgwatch_network
+  
 networks:
    pgwatch_network:
       driver: bridge
