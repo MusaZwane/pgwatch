@@ -6,7 +6,7 @@ services:
   - PW2_TESTDB=true
   - PW2_WEBNOANONYMOUS=true
   - PW2_WEBUSER=$USER
-  - PW2_WEBPASSWORD=$PASS
+  - PW2_WEBPASSWORD=$PGWATCHPASS
   - PW2_GRAFANANOANONYMOUS=true
   - PW2_WEBSSL=True
   - PW2_WEBCERT=/etc/certs/home.crt
@@ -19,7 +19,7 @@ services:
   - GF_SERVER_CERT_FILE=/etc/certs/home.crt
   - GF_SERVER_CERT_KEY=/etc/certs/home.key
   - GF_SERVER_PROTOCOL=https
-  - PW2_GRAFANAPASSWORD=defaultpassword
+  - PW2_GRAFANAPASSWORD=$GRAFANAPASS
   
   ports:
   - "8090:3000"
