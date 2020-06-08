@@ -8,6 +8,18 @@ services:
   - PW2_WEBUSER=$USER
   - PW2_WEBPASSWORD=$PASS
   - PW2_GRAFANANOANONYMOUS=true
+  - PW2_WEBSSL=True
+  - PW2_WEBCERT=/etc/certs/home.crt
+  - PW2_WEBKEY=/etc/certs/home.key
+  - PW2_SERVER_PROTOCOL=https
+
+  - PW2_GRAFANANOANONYMOUS=true
+  - PW2_GRAFANASSL=true
+  - VIRTUAL_PROTO=https
+  - GF_SERVER_CERT_FILE=/etc/certs/home.crt
+  - GF_SERVER_CERT_KEY=/etc/certs/home.key
+  - GF_SERVER_PROTOCOL=https
+  - PW2_GRAFANAPASSWORD=defaultpassword
   
   ports:
   - "8090:3000"
@@ -22,7 +34,7 @@ services:
   - ./influx:/var/lib/influxdb/:rw
   - ./pg:/var/lib/postgresql/:rw
   - ./grafana:/var/lib/grafana/:rw
-  
+  - ./certs/:/etc/certs/:rw
   networks:
   - pgwatch_network
   
@@ -34,5 +46,5 @@ networks:
       ipam:
          driver: default
          config:
-         - subnet: 172.168.0/24
+         - subnet: 172.168.30.0/24
            gateway: 172.168.30.254​
