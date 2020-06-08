@@ -2,6 +2,7 @@ version: '2.3'
 services:
  pgwatch:
   image: cybertec/pgwatch2:$BUILDTAG
+  restart: always
   environment:
   - PW2_TESTDB=true
   - PW2_WEBNOANONYMOUS=true
@@ -29,7 +30,6 @@ services:
   - ./logs/grafana:/var/log/grafana/:rw
   - ./logs/influxdb:/var/log/influxdb/:rw
   - ./logs/postgresql:/var/log/postgres/:rw
-
   - ./pw2:/pgwatch2/persistent-config/:rw
   - ./influx:/var/lib/influxdb/:rw
   - ./pg:/var/lib/postgresql/:rw
