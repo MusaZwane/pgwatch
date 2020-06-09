@@ -14,7 +14,6 @@ services:
   - PW2_WEBKEY=/etc/certs/home.key
   - PW2_SERVER_PROTOCOL=https
 
-  - PW2_GRAFANANOANONYMOUS=true
   - PW2_GRAFANASSL=true
   - VIRTUAL_PROTO=https
   - GF_SERVER_CERT_FILE=/etc/certs/home.crt
